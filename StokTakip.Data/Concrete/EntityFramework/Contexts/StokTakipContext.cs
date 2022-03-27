@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StokTakip.Data.Concrete.EntityFramework.Mappings;
-using StokTakip.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using StokTakip.Entities.Concrete;
 
 namespace StokTakip.Data.Concrete.EntityFramework.Contexts
 {

@@ -1,10 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using StokTakip.Data.Concrete.EntityFramework.Contexts;
+using StokTakip.Services.AutoMapper.Profiles;
+using StokTakip.Services.Extensions;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(typeof(BirimProfile));
+builder.Services.LoadMyService();
 builder.Services.AddDbContext<StokTakipContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"), opt =>
@@ -12,6 +16,8 @@ builder.Services.AddDbContext<StokTakipContext>(opt =>
         opt.MigrationsAssembly(Assembly.GetAssembly(typeof(StokTakipContext)).GetName().Name);
     });
 });
+
+
 
 var app = builder.Build();
 

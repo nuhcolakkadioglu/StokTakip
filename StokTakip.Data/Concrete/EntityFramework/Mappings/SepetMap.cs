@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using StokTakip.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using StokTakip.Entities.Concrete;
 
 namespace StokTakip.Data.Concrete.EntityFramework.Mappings
 {
@@ -26,7 +21,7 @@ namespace StokTakip.Data.Concrete.EntityFramework.Mappings
             builder.Property(x => x.MarkaId).IsRequired();
             builder.Property(x => x.BirimId).IsRequired();
 
-            builder.HasOne<Kategori>(m=>m.Kategori).WithMany(m=>m.Sepetler).HasForeignKey(m=>m.KategoriId).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne<Kategori>(m => m.Kategori).WithMany(m => m.Sepetler).HasForeignKey(m => m.KategoriId).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne<Urun>(m => m.Urun).WithMany(m => m.Sepetler).HasForeignKey(m => m.KategoriId).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne<Marka>(m => m.Marka).WithMany(m => m.Sepetler).HasForeignKey(m => m.KategoriId).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne<Birim>(m => m.Birim).WithMany(m => m.Sepetler).HasForeignKey(m => m.KategoriId).OnDelete(DeleteBehavior.Restrict);

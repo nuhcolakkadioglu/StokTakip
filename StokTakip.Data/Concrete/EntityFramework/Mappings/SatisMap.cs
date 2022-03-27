@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using StokTakip.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using StokTakip.Entities.Concrete;
 
 namespace StokTakip.Data.Concrete.EntityFramework.Mappings
 {
@@ -15,7 +10,7 @@ namespace StokTakip.Data.Concrete.EntityFramework.Mappings
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.BarkodNo).IsRequired().HasMaxLength(20);
-            builder.Property(x => x.BirimFiyat).IsRequired().HasPrecision(18,2);
+            builder.Property(x => x.BirimFiyat).IsRequired().HasPrecision(18, 2);
             builder.Property(x => x.Miktar).IsRequired().HasPrecision(18, 2);
             builder.Property(x => x.ToplamFiyat).IsRequired().HasPrecision(18, 2);
             builder.Property(x => x.Kdv).IsRequired();

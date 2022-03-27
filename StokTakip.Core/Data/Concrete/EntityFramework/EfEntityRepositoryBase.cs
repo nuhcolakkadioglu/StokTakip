@@ -1,12 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StokTakip.Core.Data.Abstract;
-using StokTakip.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using StokTakip.Core.Entities.Abstract;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StokTakip.Core.Data.Concrete.EntityFramework
 {
@@ -83,7 +78,7 @@ namespace StokTakip.Core.Data.Concrete.EntityFramework
         }
         public async Task DeleteAsync(TEntity entity)
         {
-            await Task.Run(() => { _context.Set<TEntity>().Remove(entity)});
+            await Task.Run(() => { _context.Set<TEntity>().Remove(entity); });
 
         }
     }
