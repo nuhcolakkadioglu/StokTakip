@@ -14,6 +14,8 @@ namespace StokTakip.Entities
 
         public ICollection<Marka> Markalar { get; set; }
         public ICollection<Urun> Urunler { get; set; }
+        public ICollection<Sepet> Sepetler { get; set; }
+
 
     }
 }

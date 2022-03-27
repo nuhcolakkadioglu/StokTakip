@@ -19,7 +19,7 @@ namespace StokTakip.Entities
         public Birim Birim { get; set; }
         public int UrunId { get; set; }
         public Urun Urun { get; set; }
-        public Sepet SepetId { get; set; }
+        public int SepetId { get; set; }
         public Sepet Sepet { get; set; }
     }
 }

@@ -21,7 +21,9 @@ namespace StokTakip.Entities
         public Marka Marka { get; set; }
         public int KategoriId { get; set; }
         public Kategori Kategori { get; set; }
-        public Birim BirimId { get; set; }
+        public int BirimId { get; set; }
         public Birim Birim { get; set; }
+
+        public ICollection<Sepet> Sepetler { get; set; }
     }
 }

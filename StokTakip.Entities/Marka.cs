@@ -12,9 +12,12 @@ namespace StokTakip.Entities
         public string MarkaAdi { get; set; }
         public string Aciklama { get; set; }
 
-        public Kategori KategoriId { get; set; }
+        public int KategoriId { get; set; }
         public Kategori Kategori { get; set; }
 
+
         public ICollection<Urun> Urunler { get; set; }
+        public ICollection<Sepet> Sepetler { get; set; }
+
     }
 }

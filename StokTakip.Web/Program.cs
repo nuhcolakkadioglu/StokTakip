@@ -1,15 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using StokTakip.Data.Concrete.EntityFramework.Contexts;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<StokTakipContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"), opt =>
+    {
+        opt.MigrationsAssembly(Assembly.GetAssembly(typeof(StokTakipContext)).GetName().Name);
+    });
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+
     app.UseHsts();
 }
 
