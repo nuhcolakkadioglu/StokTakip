@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace StokTakip.Entities
 {
-    public class Kategori : BaseEntity
+    public class Marka : BaseEntity
     {
-        public string Adi { get; set; }
+        public string MarkaAdi { get; set; }
         public string Aciklama { get; set; }
 
-        public ICollection<Marka> Markalar { get; set; }
-        public ICollection<Urun> Urunler { get; set; }
+        public Kategori KategoriId { get; set; }
+        public Kategori Kategori { get; set; }
 
+        public ICollection<Urun> Urunler { get; set; }
     }
 }
