@@ -15,12 +15,7 @@ namespace StokTakip.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            await _birimService.Add(new Entities.Dtos.BirimDtos.BirimAddDto
-            {
-                Adi ="Metre",
-                Aciklama ="metre birimi açıklama"
-            });
-
+            
             var birim =await _birimService.GetAll();
           
             return View();
