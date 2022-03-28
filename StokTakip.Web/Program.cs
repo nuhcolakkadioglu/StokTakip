@@ -7,7 +7,7 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddAutoMapper(typeof(BirimProfile));
+builder.Services.AddAutoMapper(typeof(MapsProfile));
 builder.Services.LoadMyService();
 builder.Services.AddDbContext<StokTakipContext>(opt =>
 {

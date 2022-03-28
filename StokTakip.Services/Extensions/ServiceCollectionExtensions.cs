@@ -17,6 +17,7 @@ namespace StokTakip.Services.Extensions
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IBirimService, BirimManager>();
+            services.AddScoped<IKategoriService, KategoriManager>();
 
             return services;
         }
