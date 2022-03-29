@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StokTakip.Entities.Dtos.BirimDtos;
 using StokTakip.Services.Abstract;
 
 namespace StokTakip.Web.Controllers
@@ -16,5 +17,20 @@ namespace StokTakip.Web.Controllers
             var data = await _birimService.GetAll();
             return View(data.Data);
         }
+
+        public IActionResult Create()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(BirimAddDto birimAddDto)
+        {
+            await _birimService.Add(birimAddDto);
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
     }
 }
