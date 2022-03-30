@@ -29,7 +29,22 @@ namespace StokTakip.Web.Controllers
             await _birimService.Add(birimAddDto);
             return RedirectToAction(nameof(Index));
         }
-
+        public async Task< IActionResult> Update(int id)
+        {
+            var data = await _birimService.Get(id);
+            return View(new BirimUpdateDto
+            {
+                Id =data.Data.Birim.Id,
+                Aciklama = data.Data.Birim.Aciklama,
+                Adi=data.Data.Birim.Adi
+            });
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(BirimUpdateDto model)
+        {
+         await   _birimService.Update(model);
+            return RedirectToAction(nameof(Index));
+        }
 
 
     }

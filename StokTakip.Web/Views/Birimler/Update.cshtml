@@ -1,0 +1,22 @@
+﻿@model StokTakip.Entities.Dtos.BirimDtos.BirimUpdateDto
+
+
+<h2>Güncelleme formu</h2>
+
+<div class="container">
+	<form asp-action="Update" method="post">
+		<input type="hidden" asp-for="Id" />
+		<div class="form-group">
+			<label asp-for="Adi"></label>
+			<input asp-for="Adi" class="form-control" />
+		</div>
+		<div class="form-group">
+			<label asp-for="Aciklama"></label>
+			<textarea asp-for="Aciklama" class="form-control"></textarea>
+		</div>
+		<div class="form-group">
+
+			<button class="btn btn-primary mt-3">Kaydet</button>
+		</div>
+	</form>
+</div>
